@@ -3,12 +3,12 @@ class SessionsController < ApplicationController
 
 
   def already_logged_in
-    redirect_to cats_url if current_user
+    redirect_to cats_url if @current_user
   end
 
   def new
   end
-  
+
   def create
     user = User.find_by_credentials(session_params[:username], session_params[:password])
     if user

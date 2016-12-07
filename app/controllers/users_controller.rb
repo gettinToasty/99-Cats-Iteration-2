@@ -3,9 +3,9 @@ class UsersController < ApplicationController
 
 
   def already_logged_in
-    redirect_to cats_url if current_user
+    redirect_to cats_url if @current_user
   end
-  
+
   def new
   end
 
@@ -22,8 +22,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    if params[:id] == current_user.id
-      @user = User.find(param[:id])
+    if params[:id].to_i == current_user.id
+      @user = User.find(params[:id])
       render :show
     else
       flash[:messages] = ["Stop creepin"]
