@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
+  before_action :already_logged_in, only: :new
 
+
+  def already_logged_in
+    redirect_to cats_url if current_user
+  end
+  
   def new
   end
 
