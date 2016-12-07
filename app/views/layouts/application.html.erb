@@ -9,8 +9,8 @@
 <body>
 
 <header>
-  <% if @current_user %>
-    <%= button_to "Logout", session_url, method: :delete %>
+  <% if current_user %>
+    <%= button_to "Logout", session_url(current_user.id), method: :delete %>
   <% else %>
     <%= link_to "Login", new_session_url %>
     <%= link_to "Register", new_user_url %>

@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  has_many :cats
+
   def self.find_by_credentials(username, pw)
     user = User.find_by(username: username)
     return user if user && user.is_password?(pw)
