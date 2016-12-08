@@ -11,3 +11,7 @@
   <br><br>
   <%= link_to "Rent a cat", new_cat_rental_request_url %>
 <% end %>
+
+<% content_for :footer do %>
+  <p>There are currently <%= @cats.length %> cats in out database.</p>
+<% end %>

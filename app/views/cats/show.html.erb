@@ -31,3 +31,7 @@
     <%= render "req_tr", req: req, cat: @cat %>
   <% end %>
 </table>
+
+<% content_for :footer do %>
+  <p>This cat is owned by <%= @cat.owner.username %>.</p>
+<% end %>

@@ -1,7 +1,7 @@
 <h1>Register new user</h1>
 
 <form method="post" action="<%= users_url %>">
-  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+  <%= auth_token %>
   <label for="username">User Name:</label>
   <input type="text" name="user[username]" id="username" />
 
