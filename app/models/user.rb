@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
 
   has_many :cats
 
+  has_many :rental_requests,
+    foreign_key: :user_id,
+    class_name: :CatRentalRequest
+
   def self.find_by_credentials(username, pw)
     user = User.find_by(username: username)
     return user if user && user.is_password?(pw)
